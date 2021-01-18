@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jupyter_Demo_Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Jupyter_to_openBIS_Demo_Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14320,13 +14320,13 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Read-the-data">Read the data<a class="anchor-link" href="#Read-the-data">&#182;</a></h2><p>Before reading the image, define your dataset's code, e.g., 20210118095658605-414</p>
+<h2 id="Process-the-data">Process the data<a class="anchor-link" href="#Process-the-data">&#182;</a></h2><p>First, define your dataset's code, e.g., 20210118095658605-414</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -14350,7 +14350,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -14365,10 +14365,16 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Read the data</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_dataset</span><span class="p">)</span> <span class="k">as</span> <span class="n">seq_fasta</span><span class="p">:</span>
@@ -14405,13 +14411,13 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Process-the-data">Process the data<a class="anchor-link" href="#Process-the-data">&#182;</a></h2><p>Let's say our analysis task is to read sequencing data. Here, we read a FASTA file line by line and save a header in a variable and the sequence in another variable. Then, we count Cysteine residues.</p>
+<p>Let's say our analysis task is to read sequencing data. Here, we read a FASTA file line by line and save a header in a variable and the sequence in another variable. Then, we count Cysteine residues.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -14462,16 +14468,29 @@ No. of Cysterine residues: 27
 <h2 id="Upload-the-notebook-and-data-to-openBIS">Upload the notebook and data to openBIS<a class="anchor-link" href="#Upload-the-notebook-and-data-to-openBIS">&#182;</a></h2><ul>
 <li>Select <code>File</code> &gt; <code>Save and checkpoint</code> to save your work</li>
 <li>Select <code>File</code> &gt; <code>Download as</code> &gt; <code>HTML</code> to create a static version of the notebook</li>
-<li>Click <code>upload Notebook and Data to openBIS</code> in the menu toolbar and fill in the dataset information<ul>
+<li><p>Click <code>upload Notebook and Data to openBIS</code> in the menu toolbar and fill in the dataset information</p>
+<ul>
 <li><strong>choose a dataSet type</strong>: ANALYSIS_NOTEBOOK</li>
 <li><strong>Name</strong>: Demo1</li>
 <li><strong>Notes</strong>: Results of Demo1</li>
 <li><strong>enter a sample/experiment identifier to attach this dataSet to</strong>: /JARUNANP_JARUNANP/TRAINING/JUPYTER-DEMO</li>
 <li>uncheck all <strong>Parent Datasets</strong></li>
-<li>select <strong>Files to upload</strong>:<ul>
-<li>Jupyter_Demo_Notebook.html</li>
-<li>Jupyter_Demo_Notebook.ipynb</li>
+<li><p>select <strong>Files to upload</strong>:</p>
+<ul>
+<li>Jupyter_to_openBIS_Demo_Notebook.html</li>
+<li>Jupyter_to_openBIS_Demo_Notebook.ipynb</li>
 </ul>
+<p>You can then see again a green message box at the top of the notebook. Here is an example:</p>
+
+<pre><code>DataSet successfully registered: openbis-training with permId: 20210118101243066-415</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Go to the lab notebook</p>
+<ul>
+<li>Reload the page</li>
+<li><p>Check under <code>My Space</code> &gt; <code>Training</code> &gt; <code>JUPYTER-DEMO</code> &gt; <code>JUPYTER-DEMO</code></p>
+<p>You can see that a new dataset <code>Demo1</code> is added. When you click at <code>Demo1</code> in the left menu navigation, you can see a folder <code>ANALYSIS_NOTEBOOK: Demo1</code> at the bottom of the page. The folder contains <code>Jupyter_to_openBIS_Demo_Notebook.html</code> and <code>Jupyter_to_openBIS_Demo_Notebook.ipynb</code> which you have uploaded from the Jupyter notebook.</p>
 </li>
 </ul>
 </li>
