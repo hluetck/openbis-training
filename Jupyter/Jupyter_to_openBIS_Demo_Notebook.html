@@ -14265,42 +14265,81 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Prepare-an-environment">Prepare an environment<a class="anchor-link" href="#Prepare-an-environment">&#182;</a></h2><ul>
-<li>Install packages<div class="highlight"><pre><span></span>$ pip install --upgrade numpy matplotlib scikit-image
+<h3 id="Prepare-an-environment">Prepare an environment<a class="anchor-link" href="#Prepare-an-environment">&#182;</a></h3><p>Install jupyter-openbis extension</p>
+<div class="highlight"><pre><span></span>$ pip install --upgrade jupyter-openbis-extension
 </pre></div>
-</li>
-</ul>
+<p>For Jupyter Notebook, enable the <code>jupyter-openbis</code> extension</p>
+<div class="highlight"><pre><span></span>$ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-server
+</pre></div>
+<p>For Jupyter Lab</p>
 <ul>
-<li>Install jupyter-openbis extension<div class="highlight"><pre><span></span>$ pip install --upgrade jupyter-openbis-extension
-$ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-server
-</pre></div>
-</li>
+<li>Install nodejs with a <a href="https://nodejs.org/en/download/package-manager/">package manager</a> or by conda</li>
 </ul>
-<p>When <code>jupyter-openbis-extension</code> has been installed and enabled, you can see these three extra buttons in the toolbar.
-<img src="images/jupyter-openbis-extension-buttons-explained.png" width="600" height=auto /></p>
+<div class="highlight"><pre><span></span>$ conda install nodejs
+</pre></div>
+<ul>
+<li>Install <code>jupyterlab-openbis</code> extension</li>
+</ul>
+<div class="highlight"><pre><span></span>$ jupyter labextension install jupyterlab-openbis@0.2.0
+</pre></div>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Configure-the-connection">Configure the connection<a class="anchor-link" href="#Configure-the-connection">&#182;</a></h2><ul>
-<li>Click on <code>configure openBIS connections</code> button in the toolbar</li>
-<li>Enter <ul>
+<p>When <code>jupyter-openbis-extension</code> has been installed and enabled, you can see these three extra buttons in the toolbar.</p>
+<table>
+<thead><tr>
+<th></th>
+<th style="text-align:center">Jupyter Notebook</th>
+<th style="text-align:center">Jupyter Lab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/jupyter-openbis-extension-button1.png" width="50" height=auto /></td>
+<td style="text-align:center">configure openBIS connections</td>
+<td style="text-align:center">Choose openBIS connection</td>
+</tr>
+<tr>
+<td><img src="images/jupyter-openbis-extension-button2.png" width="50" height=auto /></td>
+<td style="text-align:center">Download openBIS datasets</td>
+<td style="text-align:center">Download openBIS datasets</td>
+</tr>
+<tr>
+<td><img src="images/jupyter-openbis-extension-button3.png" width="50" height=auto /></td>
+<td style="text-align:center">upload Notebook and Data to openBIS</td>
+<td style="text-align:center">Upload openBIS datasets</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Configure-the-connection-from-Jupyter-to-openBIS">Configure the connection from Jupyter to openBIS<a class="anchor-link" href="#Configure-the-connection-from-Jupyter-to-openBIS">&#182;</a></h3><ul>
+<li>Click on  <img src="images/jupyter-openbis-extension-button1.png" width="35" height=auto />  to configure a connection to openBIS</li>
+<li>Fill in the connection information<ul>
 <li>Name: openbis-training</li>
 <li>URL: <a href="https://openbis-training.ethz.ch/openbis/webapp/eln-lims/">https://openbis-training.ethz.ch/openbis/webapp/eln-lims/</a></li>
 <li>Your username and password</li>
 <li>Click <code>Create</code></li>
 </ul>
 </li>
-<li>After the status shows <code>connected</code>, choose this connection and click <code>Choose connection</code></li>
+<li>After the status shows <code>connected</code><ul>
+<li>In Jupyter Notebook, choose this connection and click <code>Choose connection</code></li>
+<li>In Jupyter Lab, the connection is selected automatically, then click <code>Close</code></li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Download-a-dataset">Download a dataset<a class="anchor-link" href="#Download-a-dataset">&#182;</a></h2><ul>
-<li>Go to the lab notebook<ul>
+<h3 id="Download-a-dataset">Download a dataset<a class="anchor-link" href="#Download-a-dataset">&#182;</a></h3><ul>
+<li>Go to openBIS lab notebook<ul>
 <li>Click on the dataset &gt; <code>More...</code> &gt; <code>Show Identification Info</code><ul>
 <li>Copy the path under <code>Object:</code>, e.g., /JARUNANP_JARUNANP/TRAINING/JUPYTER-DEMO</li>
 </ul>
@@ -14308,10 +14347,15 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 </ul>
 </li>
 <li>Go to the Jupyter notebook<ul>
-<li>Click on <code>Download openBIS datasets</code> button in the toolbar</li>
+<li>Click on <code>Download openBIS datasets</code> <img src="images/jupyter-openbis-extension-button2.png" width="35" height=auto /> button in the toolbar</li>
 <li>Paste the path to <code>Entity Identifier/permid:</code></li>
 <li>Click <code>show datasets</code></li>
-<li>Select the dataset and click <code>Download</code></li>
+<li>Select the dataset </li>
+<li>Download<ul>
+<li>In Jupyter Notebook, click <code>Download</code> </li>
+<li>In Jupyter Lab, click <code>Download selected</code> and <code>Close</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -14326,7 +14370,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -14350,7 +14394,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -14374,7 +14418,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_dataset</span><span class="p">)</span> <span class="k">as</span> <span class="n">seq_fasta</span><span class="p">:</span>
@@ -14417,7 +14461,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -14431,7 +14475,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;header  : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sequence: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No. of Cysterine residues: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_cys</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No. of Cysteine residues: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_cys</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14453,7 +14497,7 @@ $ jupyter serverextension <span class="nb">enable</span> --py jupyter-openbis-se
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>header  : &gt;gnl|SRA|ERR3932823.1.2 1 (Biological, Forward)
 sequence: GTCAAAGCGGTTTTTCTCTGCCCATCTGATTGCTCAGATTCCAATGTGAGACGTATTTCCTGTTAATAAGGATAATGAATATTTTAACCATAGTACTACGGATAGTAAATTATCCTTATTAACAGGAAATACGTCTCACATTGGAATCTGAG
-No. of Cysterine residues: 27
+No. of Cysteine residues: 27
 </pre>
 </div>
 </div>
@@ -14465,36 +14509,51 @@ No. of Cysterine residues: 27
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Upload-the-notebook-and-data-to-openBIS">Upload the notebook and data to openBIS<a class="anchor-link" href="#Upload-the-notebook-and-data-to-openBIS">&#182;</a></h2><ul>
+<h3 id="Upload-the-notebook-and-data-to-openBIS">Upload the notebook and data to openBIS<a class="anchor-link" href="#Upload-the-notebook-and-data-to-openBIS">&#182;</a></h3><ul>
 <li>Select <code>File</code> &gt; <code>Save and checkpoint</code> to save your work</li>
 <li>Select <code>File</code> &gt; <code>Download as</code> &gt; <code>HTML</code> to create a static version of the notebook</li>
-<li><p>Click <code>upload Notebook and Data to openBIS</code> in the menu toolbar and fill in the dataset information</p>
+<li>Click on <img src="images/jupyter-openbis-extension-button3.png" width="35" height=auto /> in the menu toolbar to upload the notebook and data to openBIS</li>
+<li><p>Fill in the dataset information</p>
+<ul>
+<li><p>On Jupyter Notebook</p>
 <ul>
 <li><strong>choose a dataSet type</strong>: ANALYSIS_NOTEBOOK</li>
 <li><strong>Name</strong>: Demo1</li>
 <li><strong>Notes</strong>: Results of Demo1</li>
 <li><strong>enter a sample/experiment identifier to attach this dataSet to</strong>: /JARUNANP_JARUNANP/TRAINING/JUPYTER-DEMO</li>
 <li>uncheck all <strong>Parent Datasets</strong></li>
-<li><p>select <strong>Files to upload</strong>:</p>
-<ul>
+<li>Select <strong>Files to upload</strong>:<ul>
 <li>Jupyter_to_openBIS_Demo_Notebook.html</li>
 <li>Jupyter_to_openBIS_Demo_Notebook.ipynb</li>
 </ul>
-<p>You can then see again a green message box at the top of the notebook. Here is an example:</p>
-
-<pre><code>DataSet successfully registered: openbis-training with permId: 20210118101243066-415</code></pre>
+</li>
+<li>Click <code>Upload</code></li>
+</ul>
+</li>
+<li><p>On Jupyter Lab</p>
+<ul>
+<li><strong>Select dataSet type</strong>: ANALYSIS_NOTEBOOK</li>
+<li><strong>Name</strong>: Demo1</li>
+<li><strong>Notes</strong>: Results of Demo1</li>
+<li><strong>Sample/experiment identifier</strong>: /JARUNANP_JARUNANP/TRAINING/JUPYTER-DEMO</li>
+<li>Select <strong>Files to upload</strong>:<ul>
+<li>Jupyter_to_openBIS_Demo_Notebook.html</li>
+<li>Jupyter_to_openBIS_Demo_Notebook.ipynb</li>
+</ul>
+</li>
+<li>Click <code>Upload</code> and <code>Close</code></li>
+</ul>
 </li>
 </ul>
 </li>
-<li><p>Go to the lab notebook</p>
+<li><p>Go to openBIS lab notebook</p>
 <ul>
 <li>Reload the page</li>
-<li><p>Check under <code>My Space</code> &gt; <code>Training</code> &gt; <code>JUPYTER-DEMO</code> &gt; <code>JUPYTER-DEMO</code></p>
+<li>Check under <code>My Space</code> &gt; <code>Training</code> &gt; <code>JUPYTER-DEMO</code> &gt; <code>JUPYTER-DEMO</code></li>
+</ul>
+</li>
+</ul>
 <p>You can see that a new dataset <code>Demo1</code> is added. When you click at <code>Demo1</code> in the left menu navigation, you can see a folder <code>ANALYSIS_NOTEBOOK: Demo1</code> at the bottom of the page. The folder contains <code>Jupyter_to_openBIS_Demo_Notebook.html</code> and <code>Jupyter_to_openBIS_Demo_Notebook.ipynb</code> which you have uploaded from the Jupyter notebook.</p>
-</li>
-</ul>
-</li>
-</ul>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
