@@ -1,15 +1,89 @@
-# Analysing data stored in openBIS with Jupyter Notebooks, Python or MATLAB
+## Install Jupyter locally
 
-## Jupyter notebooks
-Jupyter notebooks provide an interactive, web-based computing environment that combine code, results and documentation in a single document. Jupyter notebooks support a lot of different programming languages. For more details and installation instructions, see https://jupyter.org/
+* Option 1: Anaconda includes Python, Jupyter, Python packages for scientific computing and data science.
+    * [Download Anaconda with Python3](https://www.anaconda.com/products/individual)
+    * Install Anaconda
 
-A tutorial describing how to analyse data stored in openBIS is available: [openBIS-Jupyter-Tutorial](https://gitlab.ethz.ch/sis-rdm-training/openbis-training/-/wikis/openBIS-Jupyter-Tutorial)
+* Option 2: Using `pip`
+    * [Download Python3](https://www.python.org/downloads/)
+    * Install Python3
+    * In a terminal
+    
+```bash
+$ pip install jupyterlab 
+```
 
-## Python
-Python is an interpreted, high-level, general-purpose programming language that is becoming increasingly popular in the scienctific community. pyBIS is a Python module for interacting with openBIS. For details / documentation, see https://sissource.ethz.ch/sispub/openbis/tree/master/pybis 
+## Run Jupyter
+* Run Jupyter Lab
 
-## MATLAB
-[MATLAB](https://ch.mathworks.com/products/matlab.html) is a numerical computing environment and programming language developed by MathWorks. ETH SIS has developed a toolbox for accessing data stored in openBIS from MATLAB: https://sissource.ethz.ch/hluetcke/matlab-openbis
+```bash
+$ jupyter-lab
+```
+* Run Jupyter Notebook
+
+```bash
+$ jupyter-nbclassic
+```
+
+## Create a virtual environment
+
+In this tutorial, we provide environment files which include Jupyter Lab and Notebook, Jupyter-openBIS extensions for both Jupyter Lab and Notebook, and Jupyter Notebook extensions.
+
+* Create a virtual environment with Conda environment from the YAML file `environments.yml`. 
+
+```bash
+$ conda env create -f environments.yml
+$ conda activate env-jupyter-obenbis
+```
+    
+Or with the requirement file `requirements.txt` for `pip`
+
+```bash
+$ python3 -m venv env-jupyter-openbis
+$ source env-jupyter-openbis/bin/activate
+(env-jupyter-obenbis)$ pip install -r requirements.txt
+```
+
+* Enable the `jupyter-openbis` extension for Jupyter Notebook
+
+```bash
+$ jupyter-nbextensions_configurator enable --py jupyter-openbis-server
+```
+* This step is optional. To save a static version of a notebook, we export a Jupyter notebook to HTML but the exported version does not include embedded images. This issue can be overcome by installing the unofficial Jupyter Notebook Extension `jupyter-contrib-nbextension` which is included in the environment files. Before enabling the extensions, install javascript and css files:
+
+```bash
+$ jupyter-contrib-nbextension install --user
+```
+
+Enable the extensions
+
+```bash
+$ jupyter-nbextensions_configurator enable --user
+```
+
+## Install an openBIS extension for Jupyter
+You can manually install Jupyter-openBIS extensions as following:
+
+**Jupyter Lab**
+
+* Install `jupyterlab-openbis` extension
+
+```bash
+$ pip install jupyterlab-openbis
+```
+
+**Jupyter Notebook**
+
+* Install `jupyter-openbis` extension
 
 
+```bash
+$ pip install --upgrade jupyter-openbis-extension
+```
 
+* Enable the `jupyter-openbis` extension
+
+
+```bash
+$ jupyter-nbextensions_configurator enable --py jupyter-openbis-server
+```
