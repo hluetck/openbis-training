@@ -1,0 +1,13 @@
+name: env-jupyter-obenbis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - jupyter_contrib_nbextensions
+  - pip
+  - pip:
+    - jupyterlab-openbis
+    - jupyter-openbis-extension

@@ -1,0 +1,6 @@
+numpy
+matplotlib
+jupyterlab
+jupyterlab-openbis
+jupyter-openbis-extension
+jupyter_contrib_nbextensions
