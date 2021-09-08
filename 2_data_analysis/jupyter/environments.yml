@@ -1,4 +1,4 @@
-name: env-jupyter-obenbis
+name: env-jupyter-openbis
 channels:
   - conda-forge
   - defaults
