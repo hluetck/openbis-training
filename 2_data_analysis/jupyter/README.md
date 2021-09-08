@@ -13,7 +13,7 @@ You can setup the environment using `conda` or `pip`. To use one of them, Anacon
     * [Download Python3](https://www.python.org/downloads/)
     * Install Python3
 
-## Step 1: Install Jupyter and extensions
+## Step 1: Install Jupyter and Jupyter-openBIS extensions
 
 #### Option 1: Create a virtual environment with `conda` using `environments.yml`
 
@@ -58,13 +58,13 @@ $ source env-jupyter-openbis/bin/activate
 
 ## Step 2: Enable the `jupyter-openbis` extension
 
-This step is only for Jupyter Notebook.
+This step is only for **Jupyter Notebook**. For Jupyter Lab, the extension is automatically enabled. 
 
 ```bash
 $ jupyter-nbextensions_configurator enable --py jupyter-openbis-server
 ```
 
-For Jupyter Lab, the extension is automatically enabled. When `jupyter-openbis` extension has been installed and enabled, you can see three extra buttons in the toolbar to create a connection to the openBIS server, to download datasets and to upload datasets.
+When `jupyter-openbis` extension has been installed and enabled, you can see three extra buttons in the toolbar to create a connection to the openBIS server, to download datasets and to upload datasets.
 
 ## Step 3: Optional
 
